@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Privacy Policy — NotiCove</title>
+<meta name="description" content="Privacy Policy for NotiCove — Notification History for Android: what notification data the app accesses, how it is stored on your device, and how Google AdMob and Firebase process data.">
+<!--
+  NotiCove legal document — AUTHORITATIVE SOURCE.
+  This file in /legal is the single source for both the public website and the
+  Android app. The androidApp Gradle task `copyLegalDocuments` packages it into
+  the APK assets at build time, so edit only this copy.
+  No external CSS, fonts, scripts, cookies or trackers are used.
+  The in-app viewer may add data-theme="light|dark" to <html> to follow the
+  theme chosen inside NotiCove; otherwise the device setting is used.
+-->
+<style>
+  :root {
+    --primary: #6246EA; --secondary: #8D50F4; --bg: #FAF9FF; --surface: #FFFFFF;
+    --text: #17132B; --muted: #5B5670; --border: #E4E0F2; --tint: #F2EEFF; --link: #5136D6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --primary: #B5A2FF; --secondary: #C9A7FF; --bg: #100F1E; --surface: #1A1830;
+      --text: #F5F2FF; --muted: #B9B3D1; --border: #2F2B48; --tint: #241F3F; --link: #C7B8FF;
+    }
+  }
+  :root[data-theme="dark"] {
+    --primary: #B5A2FF; --secondary: #C9A7FF; --bg: #100F1E; --surface: #1A1830;
+    --text: #F5F2FF; --muted: #B9B3D1; --border: #2F2B48; --tint: #241F3F; --link: #C7B8FF;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-wrap: break-word;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  .skip { position: absolute; left: -999px; top: 0; }
+  .skip:focus { left: 16px; top: 8px; background: var(--surface); padding: 8px 12px; border-radius: 8px; z-index: 2; }
+  header.site { background: var(--surface); border-bottom: 1px solid var(--border); }
+  header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding-top: 12px; padding-bottom: 12px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+  .mark { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(135deg, #6246EA, #8D50F4); }
+  .mark svg { width: 18px; height: 18px; }
+  nav.docs { display: flex; flex-wrap: wrap; gap: 6px; }
+  nav.docs a { padding: 6px 12px; border-radius: 999px; color: var(--link); text-decoration: none; font-size: .9rem; font-weight: 600; border: 1px solid var(--border); }
+  nav.docs a[aria-current="page"] { background: var(--tint); border-color: transparent; }
+  main { padding-top: 28px; padding-bottom: 48px; }
+  h1 { color: var(--primary); font-size: 1.9rem; line-height: 1.25; margin: 0 0 6px; }
+  h2 { color: var(--primary); font-size: 1.3rem; line-height: 1.35; margin: 40px 0 10px; padding-top: 4px; scroll-margin-top: 16px; }
+  h3 { font-size: 1.05rem; margin: 22px 0 6px; }
+  p, ul, ol { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+  .meta { color: var(--muted); font-size: .95rem; margin-bottom: 22px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; margin: 18px 0; }
+  .card.key { background: var(--tint); border-color: transparent; }
+  .card h2, .card h3 { margin-top: 0; }
+  .toc ol { columns: 2 220px; column-gap: 24px; margin: 0; }
+  .toc li { break-inside: avoid; }
+  .note { border-left: 4px solid var(--primary); background: var(--tint); padding: 12px 14px; border-radius: 0 12px 12px 0; margin: 16px 0; }
+  .table-scroll { overflow-x: auto; margin: 0 0 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; min-width: 520px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--primary); font-weight: 700; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: var(--tint); padding: 1px 5px; border-radius: 5px; }
+  footer.site { border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; padding: 20px 0 32px; }
+  footer.site .wrap { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; }
+  @media (max-width: 599px) {
+    table { min-width: 0; }
+    thead { position: absolute; left: -9999px; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr { border: 1px solid var(--border); border-radius: 14px; padding: 6px 4px; margin-bottom: 12px; background: var(--surface); }
+    td { border: 0; padding: 6px 10px; }
+    td::before { content: attr(data-label); display: block; color: var(--primary); font-weight: 700; font-size: .85rem; }
+  }
+  @media (min-width: 600px) { h1 { font-size: 2.2rem; } }
+  @media print { header.site nav, .skip { display: none; } body { background: #fff; color: #000; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="privacy-policy.html">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+      NotiCove
+    </a>
+    <nav class="docs" aria-label="Legal documents">
+      <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms and Conditions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>Privacy Policy</h1>
+  <p class="meta">NotiCove — Notification History · Android app <code>app.dotinfiny.noticove</code><br>Effective date: October 24, 2026 · Last updated: October 24, 2026</p>
+
+  <div class="card key" role="note" aria-label="Summary">
+    <h2 style="margin-top:0">Summary</h2>
+    <ul>
+      <li>NotiCove saves the notifications Android shares with it, after you grant <strong>Notification access</strong>. That history is stored in an encrypted database <strong>on your device</strong>.</li>
+      <li>NotiCove has no servers. It does <strong>not</strong> upload your saved notifications, and it does not put notification content into ad requests, analytics events or crash reports.</li>
+      <li>NotiCove shows ads through <strong>Google AdMob</strong> and uses <strong>Google Firebase</strong> for crash reporting. These Google services process device and usage information, such as advertising identifiers, as described below.</li>
+      <li>You can revoke access, exclude apps, choose retention, export, delete records or clear all history at any time.</li>
+    </ul>
+  </div>
+
+  <nav class="card toc" aria-label="Contents">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#information-we-access">Information We Access</a></li>
+      <li><a href="#notification-access">Notification Access Permission</a></li>
+      <li><a href="#how-used">How Notification Data Is Used</a></li>
+      <li><a href="#storage-security">Local Storage and Data Security</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#admob">Google AdMob Advertising</a></li>
+      <li><a href="#analytics">Firebase Analytics</a></li>
+      <li><a href="#crashlytics">Firebase Crashlytics</a></li>
+      <li><a href="#identifiers">Advertising Identifiers and Cookies or Similar Technologies</a></li>
+      <li><a href="#consent">Consent and Privacy Choices</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#deletion">Data Deletion</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#sharing">Data Sharing and Disclosure</a></li>
+      <li><a href="#security-limits">Security Limitations</a></li>
+      <li><a href="#changes">Changes to This Privacy Policy</a></li>
+      <li><a href="#contact">Contact Information</a></li>
+    </ol>
+  </nav>
+
+  <section aria-labelledby="introduction">
+    <h2 id="introduction">1. Introduction</h2>
+    <p>NotiCove — Notification History ("NotiCove", "the app") is an Android utility that keeps a searchable history of notifications that your device shows. It is developed and published by Muhammad Asher Ansari, an individual developer ("we", "us", "our").</p>
+    <p>This Privacy Policy explains what information NotiCove accesses, what it stores on your device, what is processed by the third-party services built into the app, and the choices you have. It applies to the NotiCove Android app and to this page. Please also read our <a href="terms-and-conditions.html">Terms and Conditions</a>.</p>
+    <p>NotiCove is a notification history tool. It is not a message-recovery tool: it can only save notifications that Android delivers to it while access is enabled. It cannot recover notifications or messages it never received.</p>
+  </section>
+
+  <section aria-labelledby="information-we-access">
+    <h2 id="information-we-access">2. Information We Access</h2>
+    <h3>2.1 Notification information (stored only on your device)</h3>
+    <p>When Notification access is enabled, NotiCove reads the following from notifications posted by other apps and saves it in its local database:</p>
+    <ul>
+      <li>The name and Android package name of the app that posted the notification.</li>
+      <li>The notification title and text, including expanded text and inbox-style lines.</li>
+      <li>For conversation-style notifications, up to the 50 most recent message lines that Android provides, together with the sender display names included in the notification.</li>
+      <li>Technical details: the time the notification was posted and last updated, its category, its notification channel identifier, Android's notification ID and key, the number of times it was updated, and when it was removed from the notification tray (if NotiCove observed the removal).</li>
+      <li>Whether you marked a record as a favorite.</li>
+    </ul>
+    <p>NotiCove does <strong>not</strong> save images, photos, videos, voice messages, files or other attachments from notifications. It also ignores its own notifications and Android "group summary" notifications.</p>
+    <div class="note"><strong>Sensitive information may appear in notifications.</strong> Notifications can contain private messages, contact names, phone numbers, email excerpts, one-time passcodes, financial alerts, health information, locations and other personal information about you and about other people. NotiCove saves whatever text Android makes available to it, so your history may contain this kind of information. Use app exclusions (Section 11) for apps whose notifications you do not want saved.</div>
+    <p>Android, device manufacturers and individual apps may hide or redact some notification content (for example, sensitive content on the lock screen or one-time codes). NotiCove does not attempt to bypass those protections.</p>
+
+    <h3>2.2 Information about apps on your device</h3>
+    <p>To show app names and icons in your history and to provide the "Open app" action, NotiCove looks up the name and icon of apps that post notifications and can check which installed apps can be launched. This information is used on your device only.</p>
+
+    <h3>2.3 Settings stored on your device</h3>
+    <p>NotiCove stores your preferences locally: whether onboarding is complete, your theme, your retention setting, whether app lock is on, and which apps you have excluded from capture.</p>
+
+    <h3>2.4 App lock</h3>
+    <p>If you turn on app lock, NotiCove asks Android to verify you with your device biometrics or your device PIN, pattern or password. NotiCove receives only the result (success or failure). It never receives or stores fingerprints, face data or your device PIN.</p>
+
+    <h3>2.5 Information processed by third-party services</h3>
+    <p>Google Mobile Ads (AdMob), Google's User Messaging Platform and Google Firebase are built into the app. They process device, usage and diagnostic information that is sent off your device to Google. This is described in Sections 6 to 10. This information is different from your saved notification history, which stays on your device.</p>
+
+    <h3>2.6 When you contact us</h3>
+    <p>If you email us, we receive your email address, your message and anything you choose to include. Please do not send us screenshots or copies of private notifications unless you need to.</p>
+  </section>
+
+  <section aria-labelledby="notification-access">
+    <h2 id="notification-access">3. Notification Access Permission</h2>
+    <p><strong>Why it is needed.</strong> Android allows an app to read notifications from other apps only through a special permission called <em>Notification access</em> (a notification listener service). NotiCove's main purpose—keeping a notification history—cannot work without it.</p>
+    <p><strong>How it is granted.</strong> NotiCove cannot grant this permission to itself. You must turn it on yourself in Android Settings. NotiCove explains this before opening the Settings screen.</p>
+    <p><strong>What it allows.</strong> While access is enabled and Android keeps the listener connected, NotiCove receives notifications as they are posted, updated or removed. When the listener connects or reconnects, NotiCove can also read the notifications that are currently in your notification tray. It cannot read notifications that were removed before access was granted or while the listener was not running.</p>
+    <p><strong>How to revoke it.</strong> You can turn off Notification access at any time:</p>
+    <ul>
+      <li>In NotiCove: <em>Settings → Notification capture → Manage access in Settings</em>, then turn NotiCove off; or</li>
+      <li>In Android Settings: open the <em>Notification access</em> (sometimes "Device &amp; app notifications" or "Special app access") screen and turn NotiCove off. The exact location depends on your device and Android version.</li>
+    </ul>
+    <p>After you revoke access, NotiCove stops saving new notifications. Notifications already saved remain on your device until you delete them (Section 13).</p>
+  </section>
+
+  <section aria-labelledby="how-used">
+    <h2 id="how-used">4. How Notification Data Is Used</h2>
+    <p>Notification information is used only to provide NotiCove's features on your device:</p>
+    <ul>
+      <li>showing your notification history, message history, favorites and record details;</li>
+      <li>local search (using an on-device search index) and filters by app, category, date and favorites;</li>
+      <li>applying your app exclusions and retention setting;</li>
+      <li>actions you choose: copying text, sharing text through Android's share sheet to an app you select, opening the source app, and exporting your history to a file.</li>
+    </ul>
+    <p><strong>Your saved notifications are not sent to us.</strong> NotiCove has no account system and no developer server. We do not sell notification content, use it for advertising, or use it to build profiles. NotiCove's code does not include notification content, sender names, app lists or your search text in ad requests, analytics events or crash-report data.</p>
+  </section>
+
+  <section aria-labelledby="storage-security">
+    <h2 id="storage-security">5. Local Storage and Data Security</h2>
+    <ul>
+      <li><strong>Encrypted database.</strong> Notification history is stored in an on-device database encrypted with SQLCipher. The database passphrase is randomly generated on your device and is itself encrypted with a key kept in the Android Keystore.</li>
+      <li><strong>Optional app lock.</strong> You can require device authentication to open NotiCove. The app locks again when it goes to the background.</li>
+      <li><strong>Screen protection.</strong> Release versions of NotiCove ask Android to block screenshots and screen recordings of the app and to hide its preview in the recent-apps screen.</li>
+      <li><strong>No cloud backup.</strong> NotiCove excludes its data from Android cloud backup and from device-to-device transfer, so your history is not copied to Google's backup service by Android. This also means your history is not restored on a new device.</li>
+      <li><strong>Exports are not encrypted.</strong> If you export your history, NotiCove writes a readable JSON file to the location you choose with Android's file picker. If you choose a cloud storage app, that provider's terms and privacy policy apply to the file. NotiCove does not delete exported files.</li>
+      <li><strong>Copy and share.</strong> Copied text is placed on Android's clipboard, and shared text is handed to the app you pick. Those apps handle the text under their own policies.</li>
+    </ul>
+    <p>See Section 16 for the limits of these protections.</p>
+  </section>
+
+  <section aria-labelledby="third-party">
+    <h2 id="third-party">6. Third-Party Services</h2>
+    <p>NotiCove includes the following services provided by Google. They receive information directly from the app on your device under Google's own terms and privacy policies. We do not receive your saved notifications from them.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Service</th><th scope="col">Purpose</th><th scope="col">Information processed (examples)</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Service">Google Mobile Ads SDK (AdMob)</td><td data-label="Purpose">Showing banner and interstitial ads; ad measurement, frequency capping and fraud prevention</td><td data-label="Information processed">IP address, advertising ID and app set ID, device and app information, ad interactions, diagnostics</td></tr>
+          <tr><td data-label="Service">Google User Messaging Platform (UMP)</td><td data-label="Purpose">Asking for and storing your advertising consent choices where required</td><td data-label="Information processed">Consent choices, device and app information, IP address (for region)</td></tr>
+          <tr><td data-label="Service">Firebase Crashlytics</td><td data-label="Purpose">Crash reports to find and fix bugs</td><td data-label="Information processed">Crash stack traces, device model, Android version, app version, a Crashlytics installation identifier</td></tr>
+          <tr><td data-label="Service">Firebase Analytics</td><td data-label="Purpose">Included in the app; collection is turned off by the app in this version (Section 8)</td><td data-label="Information processed">See Section 8</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Google's policies:</p>
+    <ul>
+      <li>Google Privacy Policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+      <li>How Google uses information from sites or apps that use its services: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
+      <li>How Google uses advertising technologies: <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+      <li>Privacy and security in Firebase: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="admob">
+    <h2 id="admob">7. Google AdMob Advertising</h2>
+    <p>NotiCove is free and is supported by advertising provided through Google AdMob.</p>
+    <ul>
+      <li><strong>Banner ads</strong> may appear at the bottom of the History and Search screens, above the navigation bar.</li>
+      <li><strong>Interstitial (full-screen) ads</strong> may occasionally appear after you complete an action such as a successful export. NotiCove limits how often they can appear.</li>
+      <li>Ads are not shown on the onboarding, permission, notification details or legal document screens.</li>
+    </ul>
+    <p>NotiCove requests ads only after Google's consent tools indicate that ads may be requested. When ads are requested or shown, the Google Mobile Ads SDK collects information from your device such as your IP address (which can indicate approximate location), your device's advertising ID and app set ID, device type, operating system, language, app identifier and version, and how you interact with ads (for example, impressions and clicks). Google uses this information to deliver, measure and improve ads, limit how often ads are shown, and prevent fraud.</p>
+    <p><strong>Personalized and non-personalized ads.</strong> Depending on your region, your consent choices and your device settings, Google may show personalized ads (based on information Google has about your interests) or non-personalized or limited ads. Non-personalized ads are based on context and general information, but still use some information for purposes such as frequency capping, measurement and fraud prevention.</p>
+    <p>Ads are provided by Google and third-party advertisers. We do not control ad content. If you tap an ad, you may be taken to a third-party website or app whose privacy policy applies.</p>
+    <p>Learn more in Google's privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
+  </section>
+
+  <section aria-labelledby="analytics">
+    <h2 id="analytics">8. Firebase Analytics</h2>
+    <p>The Firebase Analytics SDK is included in NotiCove. In the current version, NotiCove turns Firebase Analytics data collection off and sets analytics-storage consent to "denied" each time the app starts, and NotiCove does not log its own analytics events.</p>
+    <p>If analytics collection is active, Firebase Analytics can automatically collect usage and device information, such as an app-instance identifier, app version, device model, operating system version, language, approximate region derived from IP address, and events like first app open and session start. Any analytics data would be used only to understand app usage and improve NotiCove, and would never include your notification content.</p>
+    <p>If we decide to enable analytics in a future version, we will update this Privacy Policy and the app's Google Play Data safety information before doing so.</p>
+  </section>
+
+  <section aria-labelledby="crashlytics">
+    <h2 id="crashlytics">9. Firebase Crashlytics</h2>
+    <p>NotiCove uses Firebase Crashlytics to receive reports when the app crashes, so we can find and fix problems. When a crash occurs, Crashlytics sends a report to Google containing information such as:</p>
+    <ul>
+      <li>the crash time and stack trace (which part of NotiCove's code failed);</li>
+      <li>device model, Android version, app version and orientation;</li>
+      <li>technical device state, such as available memory and storage, and whether the device appears to be rooted;</li>
+      <li>a Crashlytics installation identifier used to count crashes and group reports.</li>
+    </ul>
+    <p>NotiCove does not add custom logs, custom keys or user identifiers to crash reports, and does not add notification content, sender names or search text to them. Crash reports are used only for diagnostics and app stability.</p>
+  </section>
+
+  <section aria-labelledby="identifiers">
+    <h2 id="identifiers">10. Advertising Identifiers and Cookies or Similar Technologies</h2>
+    <p><strong>Advertising ID.</strong> Android provides a resettable advertising ID that Google's SDKs may use for advertising and measurement. You can reset or delete your advertising ID, or limit ad personalization, in your device settings (for example, <em>Settings → Privacy → Ads</em> or <em>Settings → Google → Ads</em>, depending on your device). If you delete it, apps receive a string of zeros instead.</p>
+    <p><strong>App set ID.</strong> Google's SDKs may use Android's app set ID for purposes such as analytics and fraud prevention.</p>
+    <p><strong>Local storage.</strong> The Google SDKs in NotiCove may store identifiers and settings on your device (similar to cookies on websites), for example to remember your consent choices or to limit how often an ad is shown. Google's SDKs may also use other advertising technologies offered by Android where available, subject to your device settings.</p>
+    <p><strong>This page.</strong> These legal pages use no cookies, no tracking scripts and no external resources.</p>
+  </section>
+
+  <section aria-labelledby="consent">
+    <h2 id="consent">11. Consent and Privacy Choices</h2>
+    <p><strong>Advertising consent.</strong> NotiCove uses Google's User Messaging Platform (UMP) to manage advertising consent. Where required by law or Google policy—for example in the European Economic Area, the United Kingdom and Switzerland, and in other regions where Google offers privacy messages—NotiCove may show Google's consent form after onboarding. Your choices are stored on your device and apply to ads in NotiCove.</p>
+    <p><strong>Changing your choice.</strong> When Google indicates that a privacy options entry point is required for you, NotiCove shows <em>Settings → Ad privacy options</em>. Tap it to reopen Google's privacy choices form and change your decision. Opening this Privacy Policy does not change or reset your consent.</p>
+    <p><strong>Other choices you control:</strong></p>
+    <ul>
+      <li>Turn Notification access on or off (Section 3).</li>
+      <li>Exclude individual apps in <em>Settings → App management</em>. Excluding an app stops future capture from it; records already saved remain until you delete them.</li>
+      <li>Choose how long history is kept (Section 12).</li>
+      <li>Turn app lock on or off in <em>Settings → Security &amp; privacy</em>.</li>
+      <li>Reset or delete your advertising ID in device settings (Section 10).</li>
+      <li>Delete individual records or all history (Section 13).</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="retention">
+    <h2 id="retention">12. Data Retention</h2>
+    <p><strong>Saved notifications</strong> stay on your device until they are deleted. You choose the retention setting in <em>Settings → Storage &amp; data</em>:</p>
+    <ul>
+      <li>7 days, 30 days (the default) or 90 days — older records are deleted automatically; or</li>
+      <li>"Keep until I delete" — records are not deleted automatically.</li>
+    </ul>
+    <p>Records you mark as favorites are not removed by automatic cleanup; they remain until you delete them. Automatic cleanup runs when the app opens, when notification capture reconnects, and about once a day in the background. Android's battery and background-task rules can delay background cleanup, so records may remain somewhat longer than the selected period.</p>
+    <p><strong>Settings and app exclusions</strong> remain on your device until you uninstall NotiCove or clear its storage.</p>
+    <p><strong>Exported files</strong> remain wherever you saved them until you delete them.</p>
+    <p><strong>Information processed by Google</strong> through AdMob, UMP and Firebase is retained by Google according to its own policies (see Section 6). We do not control those retention periods.</p>
+    <p><strong>Emails you send us</strong> are kept for as long as needed to respond to you and keep a reasonable record of our correspondence.</p>
+  </section>
+
+  <section aria-labelledby="deletion">
+    <h2 id="deletion">13. Data Deletion</h2>
+    <ul>
+      <li><strong>Delete one record:</strong> open the notification's details and delete it.</li>
+      <li><strong>Delete all history:</strong> <em>Settings → Storage &amp; data → Clear all notification history</em>. This permanently deletes every saved notification, including favorites. Your settings and app exclusions are kept.</li>
+      <li><strong>Delete everything stored by the app:</strong> uninstall NotiCove, or use <em>Android Settings → Apps → NotiCove → Storage → Clear storage</em>. This removes the database, its encryption key and your settings from the device.</li>
+      <li><strong>Exported files</strong> are not removed by any of the options above. Delete them yourself from the location where you saved them.</li>
+      <li><strong>Advertising and diagnostics data:</strong> you can reset or delete your advertising ID in device settings. Data held by Google is associated with device or installation identifiers that we cannot link to your identity, so we generally cannot find or delete it for you. You can still contact us (Section 18) and we will help where we reasonably can. You can also use the tools Google provides under its privacy policy.</li>
+    </ul>
+    <p>Deleted history cannot be recovered by NotiCove because it does not keep backups.</p>
+  </section>
+
+  <section aria-labelledby="children">
+    <h2 id="children">14. Children's Privacy</h2>
+    <p>NotiCove is not directed to children under 13 years of age, or under the minimum age required in their country to consent to the processing of their personal data. We do not knowingly collect personal information from children. Because NotiCove contains ads and can save the content of private notifications, it is intended for adults and other users who are old enough to manage their own device and accounts.</p>
+    <p>If you believe a child has provided personal information to us—for example, by email—please contact us and we will delete it.</p>
+  </section>
+
+  <section aria-labelledby="sharing">
+    <h2 id="sharing">15. Data Sharing and Disclosure</h2>
+    <ul>
+      <li>We do <strong>not sell</strong> personal information.</li>
+      <li>We do not share your saved notification history with anyone. It is not transmitted to us.</li>
+      <li>Google receives the device, advertising, consent and diagnostic information described in Sections 6 to 10 directly from the app, as the provider of AdMob, UMP and Firebase.</li>
+      <li>When <em>you</em> choose to share, copy, export or open content, the information goes to the app or location you select.</li>
+      <li>We may disclose information we hold (in practice, emails you send us) if required by law or to protect our rights, our users or the public.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="security-limits">
+    <h2 id="security-limits">16. Security Limitations</h2>
+    <p>No app or device can be completely secure. In particular:</p>
+    <ul>
+      <li>Encryption protects history stored on the device. While you use NotiCove, the data is decrypted so it can be displayed.</li>
+      <li>Anyone who can unlock your device, malware, a rooted or compromised device, or other apps with powerful permissions (such as other notification listeners or accessibility services) may be able to access information on your device, including your notifications themselves.</li>
+      <li>App lock depends on your device's screen-lock security.</li>
+      <li>Exported files are readable and unencrypted.</li>
+      <li>If your device's Keystore key is lost or reset, the encrypted history cannot be opened and must be cleared.</li>
+    </ul>
+    <p>Keep your device updated, use a secure screen lock, and only export history to places you trust.</p>
+  </section>
+
+  <section aria-labelledby="changes">
+    <h2 id="changes">17. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy when NotiCove, its third-party services or legal requirements change. We will post the updated version on this page and in the app and change the "Last updated" date above. If a change materially affects how your information is handled, we will provide a more prominent notice, such as in the app or on the Google Play listing.</p>
+  </section>
+
+  <section aria-labelledby="contact">
+    <h2 id="contact">18. Contact Information</h2>
+    <div class="card">
+      <p style="margin-bottom:6px"><strong>Muhammad Asher Ansari</strong> — Developer of NotiCove</p>
+      <p style="margin-bottom:0">Email: <a href="mailto:asheransar@gmail.com">asheransar@gmail.com</a></p>
+    </div>
+    <p>Please contact us with any questions about this Privacy Policy or NotiCove's data practices.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Muhammad Asher Ansari · NotiCove</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-and-conditions.html">Terms and Conditions</a></span>
+  </div>
+</footer>
+</body>
+</html>

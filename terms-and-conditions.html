@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Terms and Conditions — NotiCove</title>
+<meta name="description" content="Terms and Conditions for NotiCove — Notification History for Android: permitted use, notification access, capture limitations, advertising and your responsibilities.">
+<!--
+  NotiCove legal document — AUTHORITATIVE SOURCE.
+  This file in /legal is the single source for both the public website and the
+  Android app. The androidApp Gradle task `copyLegalDocuments` packages it into
+  the APK assets at build time, so edit only this copy.
+  No external CSS, fonts, scripts, cookies or trackers are used.
+  The in-app viewer may add data-theme="light|dark" to <html> to follow the
+  theme chosen inside NotiCove; otherwise the device setting is used.
+-->
+<style>
+  :root {
+    --primary: #6246EA; --secondary: #8D50F4; --bg: #FAF9FF; --surface: #FFFFFF;
+    --text: #17132B; --muted: #5B5670; --border: #E4E0F2; --tint: #F2EEFF; --link: #5136D6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --primary: #B5A2FF; --secondary: #C9A7FF; --bg: #100F1E; --surface: #1A1830;
+      --text: #F5F2FF; --muted: #B9B3D1; --border: #2F2B48; --tint: #241F3F; --link: #C7B8FF;
+    }
+  }
+  :root[data-theme="dark"] {
+    --primary: #B5A2FF; --secondary: #C9A7FF; --bg: #100F1E; --surface: #1A1830;
+    --text: #F5F2FF; --muted: #B9B3D1; --border: #2F2B48; --tint: #241F3F; --link: #C7B8FF;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-wrap: break-word;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  .skip { position: absolute; left: -999px; top: 0; }
+  .skip:focus { left: 16px; top: 8px; background: var(--surface); padding: 8px 12px; border-radius: 8px; z-index: 2; }
+  header.site { background: var(--surface); border-bottom: 1px solid var(--border); }
+  header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding-top: 12px; padding-bottom: 12px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+  .mark { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(135deg, #6246EA, #8D50F4); }
+  .mark svg { width: 18px; height: 18px; }
+  nav.docs { display: flex; flex-wrap: wrap; gap: 6px; }
+  nav.docs a { padding: 6px 12px; border-radius: 999px; color: var(--link); text-decoration: none; font-size: .9rem; font-weight: 600; border: 1px solid var(--border); }
+  nav.docs a[aria-current="page"] { background: var(--tint); border-color: transparent; }
+  main { padding-top: 28px; padding-bottom: 48px; }
+  h1 { color: var(--primary); font-size: 1.9rem; line-height: 1.25; margin: 0 0 6px; }
+  h2 { color: var(--primary); font-size: 1.3rem; line-height: 1.35; margin: 40px 0 10px; padding-top: 4px; scroll-margin-top: 16px; }
+  h3 { font-size: 1.05rem; margin: 22px 0 6px; }
+  p, ul, ol { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+  .meta { color: var(--muted); font-size: .95rem; margin-bottom: 22px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; margin: 18px 0; }
+  .card.key { background: var(--tint); border-color: transparent; }
+  .card h2, .card h3 { margin-top: 0; }
+  .toc ol { columns: 2 220px; column-gap: 24px; margin: 0; }
+  .toc li { break-inside: avoid; }
+  .note { border-left: 4px solid var(--primary); background: var(--tint); padding: 12px 14px; border-radius: 0 12px 12px 0; margin: 16px 0; }
+  .table-scroll { overflow-x: auto; margin: 0 0 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; min-width: 520px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--primary); font-weight: 700; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: var(--tint); padding: 1px 5px; border-radius: 5px; }
+  footer.site { border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; padding: 20px 0 32px; }
+  footer.site .wrap { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; }
+  @media (max-width: 599px) {
+    table { min-width: 0; }
+    thead { position: absolute; left: -9999px; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr { border: 1px solid var(--border); border-radius: 14px; padding: 6px 4px; margin-bottom: 12px; background: var(--surface); }
+    td { border: 0; padding: 6px 10px; }
+    td::before { content: attr(data-label); display: block; color: var(--primary); font-weight: 700; font-size: .85rem; }
+  }
+  @media (min-width: 600px) { h1 { font-size: 2.2rem; } }
+  @media print { header.site nav, .skip { display: none; } body { background: #fff; color: #000; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="terms-and-conditions.html">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+      NotiCove
+    </a>
+    <nav class="docs" aria-label="Legal documents">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html" aria-current="page">Terms and Conditions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>Terms and Conditions</h1>
+  <p class="meta">NotiCove — Notification History · Android app <code>app.dotinfiny.noticove</code><br>Effective date: October 24, 2026 · Last updated: October 24, 2026</p>
+
+  <nav class="card toc" aria-label="Contents">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#acceptance">Acceptance of Terms</a></li>
+      <li><a href="#description">Description of NotiCove</a></li>
+      <li><a href="#eligibility">Eligibility and Permitted Use</a></li>
+      <li><a href="#notification-access">Notification Access</a></li>
+      <li><a href="#responsibilities">User Responsibilities</a></li>
+      <li><a href="#capture-limits">Limitations of Notification Capture</a></li>
+      <li><a href="#data-control">Data Storage and User Control</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#advertising">Advertising</a></li>
+      <li><a href="#ip">Intellectual Property</a></li>
+      <li><a href="#availability">Service Availability</a></li>
+      <li><a href="#warranties">Disclaimer of Warranties</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#app-changes">Changes to the Application</a></li>
+      <li><a href="#terms-changes">Changes to These Terms</a></li>
+      <li><a href="#law">Applicable Law</a></li>
+      <li><a href="#contact">Contact Information</a></li>
+    </ol>
+  </nav>
+
+  <section aria-labelledby="introduction">
+    <h2 id="introduction">1. Introduction</h2>
+    <p>These Terms and Conditions ("Terms") govern your use of NotiCove — Notification History ("NotiCove", "the app"), an Android app developed and published by Muhammad Asher Ansari, an individual developer ("we", "us", "our").</p>
+    <p>How NotiCove handles information is explained in our <a href="privacy-policy.html">Privacy Policy</a>, which forms part of these Terms.</p>
+  </section>
+
+  <section aria-labelledby="acceptance">
+    <h2 id="acceptance">2. Acceptance of Terms</h2>
+    <p>By downloading, installing or using NotiCove, you agree to these Terms. If you do not agree, do not use the app and uninstall it. Your use of Google Play is also subject to Google's terms.</p>
+  </section>
+
+  <section aria-labelledby="description">
+    <h2 id="description">3. Description of NotiCove</h2>
+    <p>NotiCove is a notification history utility. After you grant Android's Notification access, it saves the text of notifications that Android delivers to it, stores them in an encrypted database on your device, and lets you browse, search, filter, mark favorites, copy, share, export and delete them. It also offers app exclusions, a retention setting and an optional app lock.</p>
+    <p>NotiCove is <strong>not</strong> a message-recovery, backup or monitoring service. It does not connect to your messaging accounts, does not read messages inside other apps, and cannot restore deleted messages, media or notifications that it did not capture.</p>
+    <p>NotiCove is provided free of charge and is supported by advertising.</p>
+  </section>
+
+  <section aria-labelledby="eligibility">
+    <h2 id="eligibility">4. Eligibility and Permitted Use</h2>
+    <p>You may use NotiCove if you are at least 13 years old (or the minimum age required in your country to use such an app without parental consent) and are able to agree to these Terms. If you are under the age of majority where you live, you should review these Terms with a parent or guardian.</p>
+    <p>You may use NotiCove only on a device that you own or are authorized to manage, for your own personal, lawful purposes. You must not use NotiCove to:</p>
+    <ul>
+      <li>monitor, record or collect another person's notifications or communications without their knowledge and any consent required by law—for example, by installing it on someone else's device;</li>
+      <li>violate any applicable law, including privacy, data-protection, interception or employment laws;</li>
+      <li>copy, modify, reverse engineer, decompile or redistribute the app, except to the extent the law expressly permits this despite this restriction;</li>
+      <li>interfere with the app's advertising, consent tools or security features, or generate invalid ad traffic (for example, automated or deliberate fake clicks).</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="notification-access">
+    <h2 id="notification-access">5. Notification Access</h2>
+    <p>NotiCove's core features require Android's Notification access permission, which you must enable yourself in Android Settings. By enabling it, you allow NotiCove to read and save the notification content that Android provides to it, as described in the Privacy Policy.</p>
+    <p>Notifications may contain private information about you and other people, such as messages, contact names, codes and financial or health alerts. You decide whether to grant access and which apps to exclude. You can revoke access at any time in Android Settings or through <em>Settings → Notification capture</em> in NotiCove; saved history remains on your device until you delete it.</p>
+  </section>
+
+  <section aria-labelledby="responsibilities">
+    <h2 id="responsibilities">6. User Responsibilities</h2>
+    <ul>
+      <li>Keep your device secure, with a screen lock and up-to-date software, and consider enabling NotiCove's app lock.</li>
+      <li>Handle saved, copied, shared and exported content responsibly and lawfully, especially content involving other people.</li>
+      <li>Store exported files in places you trust. Exports are readable and not encrypted.</li>
+      <li>Do not rely on NotiCove as your only record of important information. Keep the original messages, receipts, codes or alerts in the apps that sent them.</li>
+      <li>Review your retention setting. Records older than the selected period may be deleted automatically, except favorites.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="capture-limits">
+    <h2 id="capture-limits">7. Limitations of Notification Capture</h2>
+    <p>NotiCove can only save what Android makes available to it while access is enabled and its listener service is running. In particular:</p>
+    <ul>
+      <li>Notifications posted before access was granted, while access was turned off, or while Android had stopped or disconnected the listener are generally not captured. The only exception is that notifications still in the tray may be read when the listener reconnects.</li>
+      <li>Android versions, device manufacturers and battery-optimization, power-saving or "app killing" features can delay, interrupt or prevent capture.</li>
+      <li>Android and other apps may hide, shorten or redact content—for example, sensitive notifications, lock-screen privacy settings or one-time codes. Some apps show only "New message" or similar text.</li>
+      <li>Only text is saved. Images, videos, voice messages, files and other attachments are not saved. For conversation notifications, only the message lines included in the notification are saved, up to the 50 most recent.</li>
+      <li>When a notification is updated, NotiCove keeps the latest version of that active notification rather than every intermediate version.</li>
+      <li>A notification being removed from the tray does not mean that the sender deleted the message. NotiCove cannot tell whether a message was deleted, edited or read in its original app.</li>
+      <li>Very high notification volumes, low storage or system errors may cause some notifications not to be saved.</li>
+    </ul>
+    <p>We do not guarantee that any particular notification, message, attachment or deleted content will be captured, saved or recoverable.</p>
+  </section>
+
+  <section aria-labelledby="data-control">
+    <h2 id="data-control">8. Data Storage and User Control</h2>
+    <p>Your saved history is stored on your device, not on our servers. We have no copy of it and cannot restore it. NotiCove's data is excluded from Android cloud backup and device transfer, so it is not moved to a new phone automatically.</p>
+    <p>You control your data: you can exclude apps, choose a retention period (7, 30 or 90 days, or keep until you delete), mark favorites, export your history, delete single records, clear all history, or uninstall the app. Clearing history and uninstalling are permanent. NotiCove does not import exports back into the app in this version.</p>
+  </section>
+
+  <section aria-labelledby="third-party">
+    <h2 id="third-party">9. Third-Party Services</h2>
+    <p>NotiCove includes services provided by Google: Google Mobile Ads (AdMob), Google User Messaging Platform and Firebase (Crashlytics, and the Analytics SDK, which is turned off in the current version). Your interaction with these services is also governed by Google's terms and policies, including the Google Privacy Policy at <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
+    <p>NotiCove also works with Android and with the apps you choose to share to, open or export to. We are not responsible for third-party apps, services, websites or advertisers, or for how they handle information you send to them.</p>
+  </section>
+
+  <section aria-labelledby="advertising">
+    <h2 id="advertising">10. Advertising</h2>
+    <p>NotiCove displays banner ads and, occasionally, interstitial (full-screen) ads delivered by Google AdMob. Ads are subject to your consent choices where applicable; when Google requires it, you can review your choices in <em>Settings → Ad privacy options</em>. We do not include your notification content in ad requests.</p>
+    <p>We do not create or endorse the ads shown, and we are not responsible for advertisers' products, services or websites. Any dealings you have with an advertiser are solely between you and that advertiser.</p>
+  </section>
+
+  <section aria-labelledby="ip">
+    <h2 id="ip">11. Intellectual Property</h2>
+    <p>NotiCove, including its software, design, name, logo, illustrations and text, is owned by Muhammad Asher Ansari or used with permission, and is protected by intellectual property laws. Subject to these Terms, we grant you a personal, limited, non-exclusive, non-transferable, revocable license to install and use NotiCove on Android devices you own or control.</p>
+    <p>Notification content saved by NotiCove belongs to you or to its original senders and apps. These Terms do not give us any rights to it. Third-party app names, icons and trademarks shown in your history belong to their respective owners.</p>
+  </section>
+
+  <section aria-labelledby="availability">
+    <h2 id="availability">12. Service Availability</h2>
+    <p>NotiCove's history features work on your device without an internet connection. Ads, consent forms and crash reporting require a connection. We may be unable to keep NotiCove compatible with every device, Android version or third-party app, and we may suspend or stop offering the app or its availability on Google Play. If we stop offering NotiCove, the app may continue to work on your device, but it may no longer receive updates.</p>
+  </section>
+
+  <section aria-labelledby="warranties">
+    <h2 id="warranties">13. Disclaimer of Warranties</h2>
+    <p>To the extent permitted by applicable law, NotiCove is provided "as is" and "as available". We do not promise that it will be uninterrupted, error-free or compatible with your device, or that it will capture, store or preserve every notification. We disclaim implied warranties, such as those of merchantability, fitness for a particular purpose and non-infringement, to the extent the law allows.</p>
+    <p>Nothing in these Terms limits any rights you have as a consumer that cannot be limited or excluded under the law that applies to you.</p>
+  </section>
+
+  <section aria-labelledby="liability">
+    <h2 id="liability">14. Limitation of Liability</h2>
+    <p>To the extent permitted by applicable law, we are not liable for indirect, incidental, special or consequential losses, or for loss of data, notifications, messages or profits, arising from your use of or inability to use NotiCove—including notifications that were not captured, history deleted by you or by your retention setting, or data that becomes unreadable after a device reset or key loss.</p>
+    <p>These limitations do not apply to liability that cannot be limited or excluded by law, such as liability for fraud, or for death or personal injury caused by negligence, where such rules apply.</p>
+  </section>
+
+  <section aria-labelledby="app-changes">
+    <h2 id="app-changes">15. Changes to the Application</h2>
+    <p>We may update NotiCove to fix problems, improve security, comply with Android, Google Play or legal requirements, or change features. Some updates may be required to keep using the app. If an update materially changes how information is handled, we will update the Privacy Policy first.</p>
+  </section>
+
+  <section aria-labelledby="terms-changes">
+    <h2 id="terms-changes">16. Changes to These Terms</h2>
+    <p>We may revise these Terms from time to time. The updated version will be posted on this page and in the app with a new "Last updated" date. If changes are material, we will give a more prominent notice, such as in the app. If you continue to use NotiCove after the changes take effect, you accept the revised Terms. If you do not agree, stop using the app and uninstall it.</p>
+  </section>
+
+  <section aria-labelledby="law">
+    <h2 id="law">17. Applicable Law</h2>
+    <p>These Terms are governed by the laws that apply to you, and nothing in them removes mandatory protections given to you by the law of the country where you live. If any part of these Terms is found to be unenforceable, the rest of the Terms remain in effect.</p>
+  </section>
+
+  <section aria-labelledby="contact">
+    <h2 id="contact">18. Contact Information</h2>
+    <div class="card">
+      <p style="margin-bottom:6px"><strong>Muhammad Asher Ansari</strong> — Developer of NotiCove</p>
+      <p style="margin-bottom:0">Email: <a href="mailto:asheransar@gmail.com">asheransar@gmail.com</a></p>
+    </div>
+    <p>Please contact us with any questions about these Terms.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Muhammad Asher Ansari · NotiCove</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-and-conditions.html">Terms and Conditions</a></span>
+  </div>
+</footer>
+</body>
+</html>
